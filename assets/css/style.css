@@ -8,6 +8,7 @@
 }
 
 html {
+    scroll-behavior: smooth;
     font-family: Arial, Helvetica, sans-serif;
 }
 /* Common */
@@ -18,6 +19,10 @@ html {
 
 .mt-16 {
     margin-top: 16px !important;
+}
+
+.mt-32 {
+    margin-top: 32px !important;
 }
 
 .row {
@@ -62,6 +67,7 @@ html {
     margin-top: 15px;
     cursor: pointer;
     border: none;
+    -webkit-appearance: none;
 }
 
 .btn:hover {
@@ -74,9 +80,6 @@ html {
 }
 
 /* Main */
-#wrapper{
-    
-}
 
 .text-white {
     color: white;
@@ -101,9 +104,9 @@ html {
 }
 
 #nav li {
-    float: left;
     list-style: none;
     position: relative;
+    display: inline-block;
 }
 
 #nav > li > a {
@@ -116,10 +119,15 @@ html {
     text-decoration: none;
     padding: 0 24px;
     line-height: 46px;
-    display: inline-block;
+    display: block;
+}
+
+#nav:first-child a {
+    
 }
 
 #nav > li:hover > a,
+#header .mobile-menu-btn:hover,
 #nav .subnav li:hover {
     color: #000;
     background-color: #ccc;
@@ -156,13 +164,22 @@ html {
     width: 100%;
 }
 
+#header .mobile-menu-btn,
 #header .search-btn {
     float: right;
 }
 
+#header .mobile-menu-btn {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#header .mobile-menu-btn,
 #header .search-btn .fas {
     color: #fff;
-    font-size: 20px;
+    font-size: 15px;
     line-height: 46px;
     padding: 0 24px;
     cursor: pointer; 
@@ -176,7 +193,7 @@ html {
     margin-top: 46px;
     /* 50% chieu ngang cua chinh no */
     padding-top: 50%; 
-    background: url('/W3_theband/assets/img/la.jpg') top center / cover no-repeat;
+    background: url(../img/la.jpg) top center / cover no-repeat;
     position: relative;
 }
 
@@ -192,21 +209,21 @@ html {
     font-weight: 500;
     font-size: 24px;
     margin-bottom: 25px;
+    text-shadow: 0 0 1px var(--main-color);
 }
 
 #slider .text-description {
     font-size: 15px;
 }
 
-#content{
-    
-}
-
 #content .content-section {
     width: 800px;
-    padding: 64px 0 112px;
+    max-width: 100%;
+    padding: 64px 0 100px;
     margin-left: auto;
     margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 #content .section-heading {
@@ -232,7 +249,7 @@ html {
 }
 
 #content .member-list {
-    padding-top: 48px;
+    padding-top: 36px;
 }
 
 #content .member-item {
@@ -288,7 +305,7 @@ html {
 
 /* Places */
 .places-list {
-    margin-top: 32px;
+    margin-top: 16px;
     margin-bottom: 48px;;
 }
 /* Img khong ke thua width cua the cha */
@@ -394,6 +411,7 @@ html {
     align-items: center;
     justify-content: center;
     display: none;
+    z-index: 2;
 }
 
 .modal.open {
